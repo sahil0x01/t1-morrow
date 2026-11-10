@@ -1,0 +1,16 @@
+node_modules/
+.pnpm-store/
+.DS_Store
+
+# Local secrets and generated files.
+.env
+.env.*
+!.env.example
+.dev.vars
+.wrangler/
+dist/
+coverage/
+*.log
+
+# Private product docs.
+docs/

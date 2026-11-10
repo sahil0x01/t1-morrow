@@ -1,0 +1,21 @@
+{
+  "name": "morrow",
+  "private": true,
+  "homepage": "https://github.com/sahil0x01/t1-morrow#readme",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahil0x01/t1-morrow.git"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @morrow/landing dev",
+    "deploy": "pnpm --filter @morrow/landing deploy",
+    "typecheck": "pnpm --filter @morrow/landing typecheck",
+    "db:migrate:local": "pnpm --filter @morrow/landing db:migrate:local",
+    "db:migrate:remote": "pnpm --filter @morrow/landing db:migrate:remote"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "packageManager": "pnpm@12.18.0"
+}

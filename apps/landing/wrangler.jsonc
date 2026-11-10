@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "morrow-landing",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-09",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"],
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "morrow-waitlist",
+      "database_id": "ac5495c9-0dde-4ce7-a4fc-f8e46ec32b4d",
+    },
+  ],
+  "routes": [
+    {
+      "pattern": "morrow.transistorone.com",
+      "custom_domain": true,
+    },
+  ],
+  "observability": {
+    "enabled": true,
+  },
+}
