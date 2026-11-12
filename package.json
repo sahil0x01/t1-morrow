@@ -1,6 +1,7 @@
 {
   "name": "morrow",
   "private": true,
+  "type": "module",
   "homepage": "https://github.com/sahil0x01/t1-morrow#readme",
   "license": "AGPL-3.0-only",
   "repository": {
@@ -9,10 +10,20 @@
   },
   "scripts": {
     "dev": "pnpm --filter @morrow/landing dev",
+    "dev:api": "pnpm --filter @morrow/api dev",
+    "dev:worker": "pnpm --filter @morrow/worker dev",
+    "build": "pnpm -r --if-present build",
+    "check": "pnpm typecheck && pnpm test",
+    "test": "tsx --test tests/api/health.test.ts tests/worker/health.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && pnpm -r typecheck",
     "deploy": "pnpm --filter @morrow/landing deploy",
-    "typecheck": "pnpm --filter @morrow/landing typecheck",
     "db:migrate:local": "pnpm --filter @morrow/landing db:migrate:local",
     "db:migrate:remote": "pnpm --filter @morrow/landing db:migrate:remote"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=22.18.0"

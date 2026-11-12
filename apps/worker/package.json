@@ -1,0 +1,16 @@
+{
+  "name": "@morrow/worker",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahil0x01/t1-morrow.git",
+    "directory": "apps/worker"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  }
+}
